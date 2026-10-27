@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+:root {
+  --font-heading: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+
+  /* Sections alternate between these two, so the page has rhythm as it scrolls
+     rather than one unbroken field. Both carry a trace of the hero's warmth. */
+  --band-a: #121013;
+  --band-b: #0c0a0d;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Clears the fixed bar when a pill jumps to a section. */
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--band-b);
+  color: #fff;
+}
+
+/* The typewriter caret. */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

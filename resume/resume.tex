@@ -1,0 +1,184 @@
+\documentclass[a4paper]{article}
+
+% pdfLaTeX. EB Garamond for the name, section labels, and italic role lines.
+% Source Sans for the body. Both packages ship with a full TeX Live, which is
+% what Overleaf uses, so this file does not need LuaLaTeX or bundled font files.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage[lining]{ebgaramond}
+\usepackage[default,semibold,proportional,lining]{sourcesanspro}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+
+\geometry{a4paper, top=0.42in, bottom=0.34in, left=0.5in, right=0.5in}
+
+% Medium for the name and italic role lines. Semibold for section labels.
+\newcommand{\garamondmedium}{\fontfamily{EBGaramond-LF}\fontseries{medium}\selectfont}
+\newcommand{\garamondsemibold}{\fontfamily{EBGaramond-LF}\fontseries{sb}\selectfont}
+
+\definecolor{ink}{HTML}{1A1814}
+\definecolor{pipe}{HTML}{7A7468}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\lefthyphenmin=62
+\righthyphenmin=62
+\tolerance=2500
+\emergencystretch=2.5em
+\hfuzz=1pt
+\urlstyle{same}
+\setlength{\tabcolsep}{0pt}
+\setlength{\extrarowheight}{0pt}
+
+% Section labels: full capitals, tracked 0.16em, rule underneath.
+\titlespacing*{\section}{0pt}{7.5pt}{2.2pt}
+\newcommand{\trackedsection}[1]{\textls[160]{\MakeUppercase{#1}}}
+\titleformat{\section}{
+  \garamondsemibold\fontsize{9.75pt}{11pt}\selectfont\raggedright\color{ink}
+}{}{0em}{\trackedsection}[\vspace{1pt}{\color{ink}\titlerule[0.4pt]}]
+
+\newcommand{\body}{\fontsize{9.4pt}{12.6pt}\selectfont}
+\newcommand{\meta}{\fontsize{9.4pt}{12.2pt}\selectfont}
+\newcommand{\primary}{\fontsize{10.15pt}{12.4pt}\selectfont}
+\newcommand{\rolefont}{\garamondmedium\itshape\fontsize{9.75pt}{12pt}\selectfont}
+
+\newcommand{\resumeItem}[1]{\item\body #1}
+
+% #1 organization or school (sans semibold)
+% #2 dates or city (sans, right)
+% #3 role or degree (garamond italic; \textnormal escapes back to sans)
+% #4 location or years (garamond italic, right)
+\newcommand{\resumeSubheading}[4]{%
+  \item
+  \begin{tabular*}{\textwidth}[t]{@{}>{\RaggedRight\arraybackslash}p{\dimexpr\textwidth-1.85in\relax}@{\extracolsep{\fill}}r@{}}
+    {\primary\textbf{#1}} & {\meta #2} \\[-0.5pt]
+    {\rolefont #3} & {\rolefont #4} \\
+  \end{tabular*}%
+}
+
+% #1 title and stack, which may wrap    #2 year, pinned top-right
+\newcommand{\resumeProjectHeading}[2]{%
+  \item
+  \begin{tabular*}{\textwidth}[t]{@{}>{\RaggedRight\arraybackslash}p{\dimexpr\textwidth-0.72in\relax}@{\extracolsep{\fill}}r@{}}
+    {\fontsize{9.75pt}{12.3pt}\selectfont #1} & {\meta #2} \\
+  \end{tabular*}%
+}
+
+% Run-in label for a group of bullets inside one role.
+% Placed between two bullet lists; #1 bold name, #2 stack.
+\newcommand{\resumeAgentLabel}[2]{%
+  \par\vspace{2.5pt}{\noindent\body\textbf{#1} | #2}\par\vspace{0.5pt}%
+}
+
+% One-line summary under a role, before its bullets.
+\newcommand{\roleSummary}[1]{%
+  \par\vspace{1.5pt}{\noindent\body\textbf{Summary.} #1}\par\vspace{0.5pt}%
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, topsep=1.5pt, partopsep=0pt, itemsep=5pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.16in, label={\raisebox{0.2ex}{\fontsize{4.6pt}{4.6pt}\selectfont\textbullet}}, itemsep=0.6pt, parsep=0pt, topsep=1.2pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\newcommand{\contactsep}{\hspace{0.32em}{\color{pipe}|}\hspace{0.32em}\color{ink}}
+
+\begin{document}
+\color{ink}
+\body
+
+\begin{center}
+  {\garamondmedium\fontsize{25.5pt}{24pt}\selectfont
+    \textls[110]{\MakeUppercase{Ruchita Arun Chavan}}}\\[5pt]
+  {\meta Pune, Maharashtra, India}\\[2.5pt]
+  {\meta
+    \href{tel:+919822901615}{\underline{+91 9822901615}}\contactsep
+    \href{mailto:ruchitachavan3004@gmail.com}{\underline{ruchitachavan3004@gmail.com}}\contactsep
+    \href{https://linkedin.com/in/ruchita-chavan-3004}{\underline{LinkedIn}}\contactsep
+    \href{https://github.com/ruchitachavan3004}{\underline{GitHub}}%
+  }
+\end{center}
+
+\vspace{-8pt}
+
+\section{Summary}
+{\body Focused on AI engineering, building LLM-powered applications using AWS Bedrock, Strands, LangChain, and LangGraph, with an interest in multi-agent systems and RAG. Brings a strong frontend background in developing scalable, high-performance React applications.}
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Mindstix Software Labs}{Aug 2024 – Present}
+    {Software Development Engineer 2}{Pune, India}
+
+  \resumeAgentLabel{Agentic AI}{AWS Bedrock AgentCore, Strands, LangGraph, Python, CloudWatch, OpenTelemetry, Grafana}
+  \resumeItemListStart
+    \resumeItem{Developed LangGraph-based AgentCore workflows for InDesign deck generation from Salesforce and e-commerce data, combining deterministic processing with targeted LLM calls (Strands, Claude on Bedrock).}
+    \resumeItem{Built validation gates, resilient data integrations (OAuth refresh, retries, image fallbacks), and runtime configuration bundles that allow configuration changes without redeployment.}
+    \resumeItem{Enhanced an order-notes summarization agent with Bedrock Prompt Management, caching and fallback prompts, session reuse, multilingual support, and PII anonymization with audit events and CloudWatch monitoring.}
+    \resumeItem{Built a Spring Boot SSE endpoint to stream AgentCore output and fixed HTTP/2 stream truncation by disabling proxy buffering.}
+  \resumeItemListEnd
+
+  \resumeAgentLabel{Frontend}{React, MUI, JavaScript, Jest, React Testing Library}
+  \resumeItemListStart
+    \resumeItem{Built client-specific management features and workflows for an e-commerce platform using React.}
+    \resumeItem{Built UI features for a B2B order-tracking application covering order details, inventory, notes, and banking information, across North America and global deployments.}
+    \resumeItem{Built the agent invocation interface for an AI summarization system: multi-category selection, streaming responses, and multilingual support.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Techenece}{Aug 2023 – Jul 2024}
+    {Java Developer}{}
+  \resumeItemListStart
+    \resumeItem{Developed a web-based ERP system to centralize business operations.}
+    \resumeItem{Implemented backend business logic using Java and integrated SQL database operations for efficient data storage, retrieval, and management.}
+    \resumeItem{Implemented CRUD operations, input validation, and database constraints to maintain data accuracy and consistency.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Production Incident Root Cause Analysis Agent} \textnormal{| AWS Bedrock, Python, AgentCore, LangChain, LangGraph, MongoDB}}{2026}
+  {\body An AI-powered platform to accelerate debugging and issue resolution by combining automated log analysis with code-level insights, enabling faster and more accurate root cause identification.}
+  \resumeItemListStart
+    \resumeItem{Contributed to the design and implementation of a multi-agent orchestration framework to coordinate analysis workflows.}
+    \resumeItem{Built the orchestration layer using Strands Agents, ensuring scalability and modularity.}
+    \resumeItem{Configured AWS Bedrock AgentCore Gateway for MCP tool integration and implemented a GitHub-based analysis pipeline.}
+    \resumeItem{Enabled real-time agent execution and monitoring through Server-Sent Events (SSE).}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Skills}
+\begin{itemize}[leftmargin=0in, label={}, itemsep=1.4pt, topsep=1.5pt, parsep=0pt]
+  \item \body \textbf{AI / LLM:} AWS Bedrock, AgentCore, Strands Agents, LangChain, LangGraph, Prompt Engineering
+  \item \body \textbf{Languages:} Python, Java, JavaScript
+  \item \body \textbf{Backend and Cloud:} Spring Boot, MongoDB, AWS (S3, Secrets Manager, IAM, CloudWatch), OpenTelemetry, Grafana
+  \item \body \textbf{Frontend:} React, MUI, Jest, React Testing Library
+\end{itemize}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Smt. Kashibai Navale College of Engineering}{Pune, India}
+    {B.E. in Computer Engineering \textnormal{| CGPA: 9.56 / 10}}{2019 – 2023}
+  \resumeSubheading
+    {Mahatma Gandhi Vidyalaya and Jr. College}{Pune, India}
+    {HSC (Class XII) \textnormal{| 77.85\%}}{2019}
+  \resumeSubheading
+    {Mahatma Gandhi Vidyalaya}{Pune, India}
+    {SSC (Class X) \textnormal{| 92.60\%}}{2017}
+\resumeSubHeadingListEnd
+
+\section{Achievements}
+\resumeItemListStart
+  \resumeItem{Participated in the AI for Bharat Hackathon, powered by Amazon Web Services.}
+  \resumeItem{University topper in Computer Engineering (CGPA 9.56/10), Smt. Kashibai Navale College of Engineering.}
+\resumeItemListEnd
+
+\end{document}
