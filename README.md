@@ -29,15 +29,4 @@ It never plays on its own. Moving the mouse horizontally scrubs it in both direc
 
 There is no touch equivalent, so on a phone or tablet the clip holds on its first frame.
 
-## Before this goes live
 
-- **Fonts.** Helvetica Now Display is a commercial Monotype typeface, and the two `<link>` tags in `index.html` load it from a third-party mirror rather than from a licence you hold. Buy a licence and self-host, or swap the two variables in `src/index.css` for a face you can use.
-- **The clip** is an external CloudFront URL that you do not control and that may stop resolving. Download it and serve it from `public/` instead.
-- **Navigation links** (Labs, Studio, Openings, Shop) are `href="#"` placeholders in `src/components/Navbar.tsx`. The four white pills are buttons with no action yet.
-- **The email address** `hello@mainframe.co` appears in both `Navbar.tsx` and `Hero.tsx`.
-
-## Choices worth knowing
-
-- The typed greeting appears in full, immediately, for anyone who asks for reduced motion, because text arriving letter by letter is hard for some people to read.
-- The mobile sheet is `inert` while closed, so its links cannot be reached by keyboard behind the page, and Escape closes it.
-- Copying the address announces itself to screen readers through a visually hidden live region. If the browser refuses clipboard access, nothing breaks; the address is on screen to copy by hand.
